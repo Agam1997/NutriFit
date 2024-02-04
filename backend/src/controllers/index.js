@@ -4,3 +4,4 @@ module.exports.fitnessDataController = require('./fitnessData.controller');
 module.exports.fitnessRegimeController = require('./fitnessRegime.controller');
 module.exports.foodController = require('./food.controller');
 module.exports.categoryController = require('./category.controller');
+module.exports.subCategoryController = require('./subcategory.controller');

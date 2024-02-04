@@ -16,3 +16,5 @@ router
   .get(auth('getFoods'), validate(foodValidation.getFood), foodController.getFoodById)
   .put(auth('manageFoods'), validate(foodValidation.createFood), foodController.updateFoodById)
   .delete(auth('manageFoods'), validate(foodValidation.deleteFood), foodController.deleteFood);
+
+module.exports = router;

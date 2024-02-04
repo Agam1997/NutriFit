@@ -23,6 +23,12 @@ const categorySchema = new mongoose.Schema({
 categorySchema.plugin(toJSON);
 categorySchema.plugin(paginate);
 
+// Function to check if a category with a given name already exists
+categorySchema.statics.isNameTaken = async function (name, excludeCategoryID) {
+  const category = await this.findOne({ name, _id: { $ne: excludeCategoryID } });
+  return !!category;
+};
+
 const Category = mongoose.model('Category', categorySchema);
 
 module.exports = Category;

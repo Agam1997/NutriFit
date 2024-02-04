@@ -5,3 +5,5 @@ module.exports.userService = require('./user.service');
 module.exports.fitnessDataService = require('./fitnessData.service');
 module.exports.fitnessRegimeService = require('./fitnessRegime.service');
 module.exports.foodService = require('./food.service');
+module.exports.categoryService = require('./category.service');
+module.exports.subcategoryService = require('./subcategory.service');

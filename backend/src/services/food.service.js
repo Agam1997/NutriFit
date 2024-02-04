@@ -1,6 +1,4 @@
-const httpStatus = require('http-status');
 const { Food } = require('../models');
-const ApiError = require('../utils/ApiError');
 
 /**
  * Get Foods
@@ -44,7 +42,12 @@ const updateFood = async (id, updateBody) => {
  * @returns {Promise<Food>}
  */
 const deleteFood = async (id) => {
-  return Food.deleteOne(id);
+  const food = await getFoodById(id);
+  if (!food) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'food not found');
+  }
+  await food.remove();
+  return food;
 };
 
 module.exports = {

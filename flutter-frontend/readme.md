@@ -1,0 +1,1 @@
+Directory for flutter app - TBD after i learn flutter 

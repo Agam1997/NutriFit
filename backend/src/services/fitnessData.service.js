@@ -5,6 +5,7 @@ const { userService } = require('.');
 
 /**
  * create fitness data
+  * @param {ObjectId} userId
  * @param {Object} fitnessDataBody
  * @returns {Promise<FitnessData>}
  */

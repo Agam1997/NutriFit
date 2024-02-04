@@ -1,7 +1,6 @@
 const httpStatus = require('http-status');
 const { FitnessRegime } = require('../models');
 const ApiError = require('../utils/ApiError');
-const { userService } = require('.');
 
 /**
  * create fitness data

@@ -1,20 +1,30 @@
 const { objectId } = require('./custom.validation');
 const Joi = require('joi');
 
+const metricValidation = Joi.object().keys({
+  current: Joi.number().required(),
+  history: Joi.array().items(
+    Joi.object().keys({
+      value: Joi.number().required(),
+      date: Joi.date().required(),
+    })
+  ),
+});
+
 const createFitnessData = {
   body: Joi.object().keys({
-    weight: Joi.string().required(),
-    height: Joi.string().required(),
-    neck: Joi.string().required(),
-    rightBicep: Joi.string().required(),
-    leftBicep: Joi.string().required(),
-    chest: Joi.string().required(),
-    upperAbdomen: Joi.string().required(),
-    abdomen: Joi.string().required(),
-    lowerAbdomen: Joi.string().required(),
-    hips: Joi.string().required(),
-    rightThigh: Joi.string().required(),
-    leftThigh: Joi.string().required(),
+    weight: metricValidation.required(),
+    height: Joi.number().required(),
+    neck: metricValidation.required(),
+    rightBicep: metricValidation.required(),
+    leftBicep: metricValidation.required(),
+    chest: metricValidation.required(),
+    upperAbdomen: metricValidation.required(),
+    abdomen: metricValidation.required(),
+    lowerAbdomen: metricValidation.required(),
+    hips: metricValidation.required(),
+    rightThigh: metricValidation.required(),
+    leftThigh: metricValidation.required(),
   }),
 };
 

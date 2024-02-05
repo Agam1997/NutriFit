@@ -13,7 +13,7 @@ const router = express.Router();
 // create user / get all users
 router
   .route('/')
-  .post(validate(userValidation.createUser), userController.createUser)
+  .post(auth('manageUsers'),validate(userValidation.createUser), userController.createUser)
   .get(auth('getUsers'), validate(userValidation.getUsers), userController.getUsers);
 
 // get,update,delete specific user by id

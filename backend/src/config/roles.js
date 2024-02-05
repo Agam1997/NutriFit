@@ -7,6 +7,7 @@ const allRoles = {
     'getFoods',
     'getCategory',
     'getSubCategory',
+    'getUsers'
   ],
   admin: [
     'getUsers',
